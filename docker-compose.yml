@@ -7,10 +7,10 @@ services:
         volumes:
             - ./docker:/var/lib/mysql
         environment:
-            MYSQL_ROOT_PASSWORD: "password"
-            MYSQL_USER: "user"
-            MYSQL_PASSWORD: "password"
-            MYSQL_DATABASE: "chaveiro"
+            MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASS}"
+            MYSQL_USER: "${MYSQL_USER}"
+            MYSQL_PASSWORD: "${MYSQL_PASS}"
+            MYSQL_DATABASE: "${MYSQL_DATABASE}"
     app:
         image: "phpmyadmin/phpmyadmin:latest"
         links:
