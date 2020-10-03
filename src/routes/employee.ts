@@ -16,7 +16,7 @@ routes.get("/:id",
 
 // Return employee by id
 routes.post("/",
-    EmployeeController.default.nemEmployee
+    EmployeeController.default.newEmployee
 );
 
 // Edit employee

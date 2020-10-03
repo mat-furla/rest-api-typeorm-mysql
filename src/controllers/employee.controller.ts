@@ -24,7 +24,7 @@ class EmployeeController {
         }
     };
 
-    static nemEmployee = async (req: Request, res: Response) => {
+    static newEmployee = async (req: Request, res: Response) => {
         const { name, sector } = req.body;
 
         if (!(name && sector)) {
