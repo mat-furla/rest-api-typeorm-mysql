@@ -21,7 +21,7 @@ routes.post("/",
 
 // Edit employee
 routes.patch("/:id",
-    EmployeeController.default.editEmployee
+    EmployeeController.default.updateEmployee
 );
 
 // Delete employee
