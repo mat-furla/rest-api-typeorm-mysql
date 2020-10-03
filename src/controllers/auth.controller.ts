@@ -3,8 +3,8 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { getRepository } from 'typeorm';
 
-import { JWT_ACCESS_SECRET } from '../environments';
 import { User } from '../database/models/user.model.';
+import { JWT_ACCESS_SECRET } from '../environments';
 
 class AuthController {
     static register = async (req: Request, res: Response) => {
