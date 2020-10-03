@@ -3,6 +3,7 @@ import { Request, Response, Router } from 'express';
 import auth from './auth';
 import employee from './employee';
 import key from './key';
+import requisition from './requisition';
 import user from './user';
 
 const routes = Router();
@@ -18,6 +19,8 @@ routes.get('/', (req: Request, res: Response) => {
             '/employee/:id': ['get', 'patch', 'delete'],
             '/key': ['get'],
             '/key:id': ['get', 'patch', 'post'],
+            '/requisition': ['get'],
+            '/requisition:id': ['get', 'patch', 'post'],
             '/user': ['get'],
             '/user/:id': ['get', 'patch', 'delete'],
         }
@@ -27,6 +30,7 @@ routes.get('/', (req: Request, res: Response) => {
 routes.use('/auth', auth);
 routes.use('/employee', employee);
 routes.use('/key', key);
+routes.use('/requisition', requisition);
 routes.use('/user', user);
 
 export default routes;

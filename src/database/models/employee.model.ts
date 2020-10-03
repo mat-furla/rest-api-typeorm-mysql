@@ -1,11 +1,16 @@
 import {
-    Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn
+    Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn, UpdateDateColumn, Index
 } from 'typeorm';
+
+import { Requisition } from './requisition.model';
 
 @Entity('employees')
 export class Employee {
     @PrimaryGeneratedColumn('uuid')
     id: string;
+
+    @OneToMany(type => Requisition, employee => Employee)
+    requisitions: Requisition[];
 
     @Column()
     name: string;

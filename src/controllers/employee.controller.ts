@@ -44,15 +44,16 @@ class EmployeeController {
         const employeeRepository = getRepository(Employee);
         try {
             await employeeRepository.save(employee);
-        } catch (e) {
-            res.status(409).send({ "message": "Name already in use" });
+        } catch (err) {
+            console.log(`Failed to create employee: ${err}`)
+            res.status(409).send({ "message": "Failed to create employee" });
             return;
         }
 
-        res.status(201).send({ "message": "Employee created" });
+        res.status(201).send(employee);
     };
 
-    static editEmployee = async (req: Request, res: Response) => {
+    static updateEmployee = async (req: Request, res: Response) => {
         const id = req.params.id;
         const { name, sector } = req.body;
 
@@ -79,12 +80,13 @@ class EmployeeController {
 
         try {
             await employeeRepository.save(employee);
-        } catch (e) {
-            res.status(409).send({ "message": "Name already in use" });
+        } catch (err) {
+            console.log(`Failed to update employee: ${err}`);
+            res.status(409).send({ "message": "Failed to update employee" });
             return;
         }
 
-        res.status(204).send();
+        res.status(204).send(employee);
     };
 
     static deleteEmployee = async (req: Request, res: Response) => {
@@ -100,7 +102,7 @@ class EmployeeController {
         }
         employeeRepository.delete(id);
 
-        res.status(204).send();
+        res.status(204).send({ "message": "Employee deleted" });
     };
 };
 

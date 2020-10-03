@@ -44,12 +44,13 @@ class KeyController {
         const keyRepository = getRepository(Key);
         try {
             await keyRepository.save(key);
-        } catch (e) {
-            res.status(409).send({ "message": `e` });
+        } catch (err) {
+            console.log(`Failed to create key: ${err}`)
+            res.status(409).send({ "message": "Failed to create key" });
             return;
         }
 
-        res.status(201).send({ "message": "Key created" });
+        res.status(201).send(key);
     };
 
     static updateKey = async (req: Request, res: Response) => {
@@ -74,12 +75,13 @@ class KeyController {
 
         try {
             await keyRepository.save(key);
-        } catch (e) {
-            res.status(409).send({ "message": `e`});
+        } catch (err) {
+            console.log(`Failed to update key: ${err}`)
+            res.status(409).send({ "message": "Failed to update key"});
             return;
         }
 
-        res.status(204).send();
+        res.status(204).send(key);
     };
 
     static deleteKey = async (req: Request, res: Response) => {
@@ -95,7 +97,7 @@ class KeyController {
         }
         keyRepository.delete(id);
 
-        res.status(204).send();
+        res.status(204).send({ "message": "Key deleted" });
     };
 };
 
