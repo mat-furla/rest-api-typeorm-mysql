@@ -2,6 +2,7 @@ import { Request, Response, Router } from 'express';
 
 import auth from './auth';
 import employee from './employee';
+import engine from './engine';
 import key from './key';
 import requisition from './requisition';
 import user from './user';
@@ -17,8 +18,10 @@ routes.get('/', (req: Request, res: Response) => {
             '/auth/change-password': ['post'],
             '/employee': ['get', 'post'],
             '/employee/:id': ['get', 'patch', 'delete'],
+            '/engine': ['post'],
+            '/engine/:id': ['get', 'patch'],
             '/key': ['get'],
-            '/key:id': ['get', 'patch', 'post'],
+            '/key:id': ['get', 'patch'],
             '/requisition': ['get'],
             '/requisition:id': ['get', 'patch', 'post'],
             '/user': ['get'],
@@ -29,6 +32,7 @@ routes.get('/', (req: Request, res: Response) => {
 
 routes.use('/auth', auth);
 routes.use('/employee', employee);
+routes.use('/engine', engine);
 routes.use('/key', key);
 routes.use('/requisition', requisition);
 routes.use('/user', user);
