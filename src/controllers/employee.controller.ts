@@ -2,7 +2,7 @@ import { validate } from 'class-validator';
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 
-import { Employee } from './../database/models/employee.model';
+import { Employee } from '../database/models/employee.model';
 
 class EmployeeController {
     static listAll = async (req: Request, res: Response) => {

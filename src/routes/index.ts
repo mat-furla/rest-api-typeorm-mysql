@@ -1,7 +1,7 @@
 import { Request, Response, Router } from 'express';
 
 import auth from './auth';
-import employee from './employee'
+import employee from './employee';
 import user from './user';
 
 const routes = Router();
