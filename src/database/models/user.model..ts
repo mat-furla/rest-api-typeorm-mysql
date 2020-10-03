@@ -12,11 +12,11 @@ export class User {
 
     @Column()
     @Unique(["username"])
-    @Length(6, 255)
+    @Length(6, 255, {message: 'Username must have at least 6 characters'})
     username: string;
 
     @Column()
-    @Length(6, 255)
+    @Length(6, 255, {message: 'Password must have at least 6 characters'})
     password: string;
 
     @Column()

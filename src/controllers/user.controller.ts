@@ -2,7 +2,7 @@ import { validate } from 'class-validator';
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 
-import { User } from '../models/user.model.';
+import { User } from '../database/models/user.model.';
 
 class UserController {
     static listAll = async (req: Request, res: Response) => {

@@ -18,12 +18,6 @@ routes.get("/:id",
     UserController.default.getOneById
 );
 
-// Create user
-routes.post("/",
-    [checkJwt, checkRole(["ADMIN"])],
-    UserController.default.newUser
-);
-
 // Edit user
 routes.patch("/:id",
     [checkJwt, checkRole(["ADMIN"])],
