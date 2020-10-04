@@ -1,7 +1,7 @@
 version: '3'
 services:
     db:
-        image: tobi312/rpi-mariadb:10.4-alpine
+        image: tobi312/rpi-mariadb:10.3
         volumes:
             - ./data:/var/lib/mysql
         environment:
