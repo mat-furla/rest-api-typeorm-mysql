@@ -9,10 +9,7 @@ import { createConnection } from 'typeorm';
 import { PORT } from './environments';
 import routes from './routes';
 
-let database
-process.env.NODE_ENV="production" ? database="production" : database = "default"
-
-createConnection(database)
+createConnection()
     .then(async connection => {
         // Create express instance
         const app = express();
@@ -27,7 +24,7 @@ createConnection(database)
 
         // Listen ports
         app.listen(PORT, () => {
-            console.log(`Server started on port ${PORT}`);
+            console.log(`Server started on http://localhost:${PORT}`);
         });
     })
     .catch(error => console.log(error));
