@@ -1,11 +1,7 @@
 version: '3'
 services:
     db:
-        build:
-            context: .
-            dockerfile: Dockerfile-db
-        ports:
-            - '3306:3306'
+        image: tobi312/rpi-mariadb:10.4-alpine
         volumes:
             - ./data:/var/lib/mysql
         environment:
@@ -13,11 +9,11 @@ services:
             MYSQL_USER: '${MYSQL_USER}'
             MYSQL_PASSWORD: '${MYSQL_PASS}'
             MYSQL_DATABASE: '${MYSQL_DATABASE}'
+        ports:
+            - '3306:3306'
         network_mode: 'host'
     api:
-        build:
-            context: .
-            dockerfile: Dockerfile-api
+        build: .
         depends_on:
             - 'db'
         ports:
