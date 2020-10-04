@@ -9,7 +9,10 @@ import { createConnection } from 'typeorm';
 import { PORT } from './environments';
 import routes from './routes';
 
-createConnection()
+let database
+process.env.NODE_ENV="production" ? database="production" : database = "default"
+
+createConnection(database)
     .then(async connection => {
         // Create express instance
         const app = express();

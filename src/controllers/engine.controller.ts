@@ -2,7 +2,7 @@ import { validate } from 'class-validator';
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 
-import { Engine } from './../database/models/engine.model';
+import { Engine } from '../database/models/engine.model';
 
 class EngineController {
     static getOneById = async (req: Request, res: Response) => {

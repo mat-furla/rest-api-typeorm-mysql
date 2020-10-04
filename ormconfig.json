@@ -1,20 +1,44 @@
-{
-    "type": "mysql",
-    "host": "localhost",
-    "port": 3306,
-    "username": "user",
-    "password": "password",
-    "database": "chaveiro",
-    "synchronize": false,
-    "logging": false,
-    "entities": [
-        "src/database/models/**/*.ts"
-    ],
-    "migrations": [
-        "src/database/migrations/**/*.ts"
-    ],
-    "cli": {
-        "entitiesDir": "src/database/models",
-        "migrationsDir": "src/database/migrations"
+[
+    {
+        "name": "default",
+        "type": "mysql",
+        "host": "localhost",
+        "port": 3306,
+        "username": "user",
+        "password": "password",
+        "database": "chaveiro",
+        "synchronize": false,
+        "logging": false,
+        "entities": [
+            "src/database/models/**/*.ts"
+        ],
+        "migrations": [
+            "src/database/migrations/**/*.ts"
+        ],
+        "cli": {
+            "entitiesDir": "src/database/models",
+            "migrationsDir": "src/database/migrations"
+        }
+    },
+    {
+        "name": "production",
+        "type": "mysql",
+        "host": "localhost",
+        "port": 3306,
+        "username": "user",
+        "password": "password",
+        "database": "chaveiro",
+        "synchronize": false,
+        "logging": false,
+        "entities": [
+            "build/database/models/**/*.js"
+        ],
+        "migrations": [
+            "build/database/migrations/**/*.js"
+        ],
+        "cli": {
+            "entitiesDir": "build/database/models",
+            "migrationsDir": "build/database/migrations"
+        }
     }
-}
+]

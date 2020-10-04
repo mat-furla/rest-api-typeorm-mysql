@@ -2,7 +2,7 @@ import { validate } from 'class-validator';
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 
-import { Key } from './../database/models/key.model';
+import { Key } from '../database/models/key.model';
 
 class KeyController {
     static listAll = async (req: Request, res: Response) => {
