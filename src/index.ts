@@ -9,22 +9,35 @@ import { createConnection } from 'typeorm';
 import { PORT } from './environments';
 import routes from './routes';
 
-createConnection()
-    .then(async connection => {
-        // Create express instance
-        const app = express();
+const main = async () => {
+    let retries = 20;
+    while (retries) {
+        try {
+            await createConnection();
+            break;
+        } catch (err) {
+            console.log(err);
+            retries -= 1;
+            console.log(`Retries left: ${retries}`)
+            await new Promise(res => setTimeout(res, 5000));
+        }
+    }
 
-        // Enable middlewares
-        app.use(cors());
-        app.use(helmet());
-        app.use(bodyParser.json());
+    // Create express instance
+    const app = express();
 
-        // Redirect routes
-        app.use("/", routes);
+    // Enable middlewares
+    app.use(cors());
+    app.use(helmet());
+    app.use(bodyParser.json());
 
-        // Listen ports
-        app.listen(PORT, () => {
-            console.log(`Server started on http://localhost:${PORT}`);
-        });
-    })
-    .catch(error => console.log(error));
+    // Redirect routes
+    app.use("/", routes);
+
+    // Listen ports
+    app.listen(PORT, () => {
+        console.log(`Server started on http://localhost:${PORT}`);
+    });
+}
+
+main();
