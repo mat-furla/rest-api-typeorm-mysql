@@ -9,13 +9,13 @@
     "synchronize": false,
     "logging": false,
     "entities": [
-        "src/database/models/**/*.ts"
+        "build/database/models/**/*.js"
     ],
     "migrations": [
-        "src/database/migrations/**/*.ts"
+        "build/database/migrations/**/*.js"
     ],
     "cli": {
-        "entitiesDir": "src/database/models",
-        "migrationsDir": "src/database/migrations"
+        "entitiesDir": "build/database/models",
+        "migrationsDir": "build/database/migrations"
     }
 }
