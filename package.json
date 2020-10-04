@@ -36,6 +36,6 @@
         "start": "node build/index.js",
         "dev": "ts-node-dev --inspect --ignore-watch node_modules src/index.ts",
         "typeorm": "node ./node_modules/typeorm/cli.js",
-        "prestart": "node ./node_modules/typeorm/cli.js migration:run"
+        "typeorm:migration": "node ./node_modules/typeorm/cli.js migration:run"
     }
 }
