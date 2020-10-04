@@ -1,4 +1,4 @@
-import * as argon2 from 'argon2';
+//import * as argon2 from 'argon2';
 import { IsNotEmpty, Length } from 'class-validator';
 import {
     BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique,
@@ -34,10 +34,10 @@ export class User {
     @BeforeInsert()
     @BeforeUpdate()
     async hashPassword() {
-        this.password = await argon2.hash(this.password, {type: argon2.argon2id});
+        //this.password = await argon2.hash(this.password, {type: argon2.argon2id});
     }
 
     async checkPassword(password: string) {
-        return await argon2.verify(this.password, password);
+        //return await argon2.verify(this.password, password);
     }
 }

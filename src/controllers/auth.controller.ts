@@ -68,9 +68,9 @@ class AuthController {
             }
 
             // Verify password
-            if (!(await user.checkPassword(password))) {
+/*             if (!(await user.checkPassword(password))) {
                 return res.status(400).send({ "message": "Failed to login" });
-            }
+            } */
 
             // Create jwt token
             const token = jwt.sign(
