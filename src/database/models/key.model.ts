@@ -4,7 +4,7 @@ import { Column, CreateDateColumn, Entity, PrimaryColumn, Unique, UpdateDateColu
 export class Key {
     @PrimaryColumn()
     @Unique(["id"])
-    id: string;
+    id: number;
 
     @Column()
     available: boolean;
