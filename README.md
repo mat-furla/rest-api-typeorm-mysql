@@ -1,4 +1,9 @@
-# Chaveiro Smart Rest API
+<a>
+    <img src="README/logo.svg" alt="Chaveiro logo" title="chaveiro-smart" align="right" height="60" />
+</a>
+
+Chaveiro Smart Rest API
+======================
 
 O seguinte repositório contém uma API Rest para o projeto Chaveiro Smart.
 
@@ -14,8 +19,6 @@ A API foi desenvolvida com TypeScript e NodeJS, utilizando algumas tecnologias, 
 
 
 
-
----
 
 ## Sumário
 
@@ -35,8 +38,6 @@ A API foi desenvolvida com TypeScript e NodeJS, utilizando algumas tecnologias, 
         * [Motor](#motor)
         * [Chaves](#chaves)
         * [Requisições](#requisições)
-
----
 
 
 
@@ -155,7 +156,9 @@ Execute as migrations:
 
 ## Entidades
 
-![entity](README/entity.svg?raw=true&sanitize=true)
+<a>
+    <img src="README/entity.svg?raw=true&sanitize=true" align="center" width="100%" />
+</a>
 
 
 
