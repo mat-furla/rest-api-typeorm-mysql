@@ -11,6 +11,7 @@ services:
             MYSQL_DATABASE: '${MYSQL_DATABASE}'
         ports:
             - '3306:3306'
+        restart: unless-stopped
         network_mode: 'host'
     api:
         build: .
@@ -18,4 +19,5 @@ services:
             - 'db'
         ports:
             - 3000:3000
+        restart: unless-stopped
         network_mode: 'host'
