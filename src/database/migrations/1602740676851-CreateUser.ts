@@ -1,0 +1,13 @@
+import {getRepository, MigrationInterface, QueryRunner} from "typeorm";
+import { UserSeed } from './../seeds/user.seed';
+
+export class CreateUser1602740676851 implements MigrationInterface {
+
+    public async up(queryRunner: QueryRunner): Promise<void> {
+        const keys = await getRepository("keys").save(UserSeed);
+    }
+
+    public async down(queryRunner: QueryRunner): Promise<void> {
+    }
+
+}
