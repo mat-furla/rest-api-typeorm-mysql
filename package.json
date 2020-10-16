@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Rest API/Projeto Chaveiro-Smart",
     "devDependencies": {
+        "@types/bcryptjs": "^2.4.2",
         "@types/cors": "^2.8.7",
         "@types/express": "^4.17.8",
         "@types/jsonwebtoken": "^8.5.0",
@@ -20,7 +21,6 @@
         "typescript": "3.3.3333"
     },
     "dependencies": {
-        "@types/bcryptjs": "^2.4.2",
         "bcryptjs": "^2.4.3",
         "body-parser": "^1.18.1",
         "class-validator": "^0.12.2",
