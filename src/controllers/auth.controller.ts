@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { getRepository } from 'typeorm';
 
-import { User } from '../database/models/user.model.';
+import { User } from '../database/models/user.model';
 import { JWT_ACCESS_SECRET } from '../environments';
 
 class AuthController {

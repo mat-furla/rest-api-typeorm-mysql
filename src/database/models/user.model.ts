@@ -34,10 +34,10 @@ export class User {
 
     @BeforeInsert()
     async hashPassword() {
-        this.password = bcrypt.hashSync(this.password, 12);
+        this.password = await bcrypt.hash(this.password, 8);
     }
 
     async checkPassword(password: string) {
-        return bcrypt.compareSync(password, this.password);
+        return await bcrypt.compare(password, this.password);
     }
 }
