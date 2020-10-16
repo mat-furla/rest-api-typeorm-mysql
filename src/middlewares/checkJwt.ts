@@ -4,11 +4,11 @@ import jwt from 'jsonwebtoken';
 import { JWT_ACCESS_SECRET } from '../environments';
 
 export const checkJwt = (req: Request, res: Response, next: NextFunction) => {
-    const token = <string>req.headers["auth"];
+    const token = <string>req.headers["authorization"];
     let jwtPayload;
 
     try {
-        jwtPayload = <any>jwt.verify(token, JWT_ACCESS_SECRET);
+        jwtPayload = <any>jwt.verify(token.replace('Bearer ', ''), JWT_ACCESS_SECRET);
         res.locals.jwtPayload = jwtPayload;
     } catch (error) {
         res.status(401).send();

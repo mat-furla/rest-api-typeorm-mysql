@@ -3,7 +3,7 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { getRepository } from 'typeorm';
 
-import { User } from '../database/models/user.model.';
+import { User } from '../database/models/user.model';
 import { JWT_ACCESS_SECRET } from '../environments';
 
 class AuthController {
@@ -68,9 +68,9 @@ class AuthController {
             }
 
             // Verify password
-/*             if (!(await user.checkPassword(password))) {
+            if (!(await user.checkPassword(password))) {
                 return res.status(400).send({ "message": "Failed to login" });
-            } */
+            }
 
             // Create jwt token
             const token = jwt.sign(

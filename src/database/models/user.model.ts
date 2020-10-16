@@ -1,9 +1,10 @@
-//import * as argon2 from 'argon2';
 import { IsNotEmpty, Length } from 'class-validator';
 import {
-    BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique,
+    BeforeInsert, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique,
     UpdateDateColumn
 } from 'typeorm';
+
+import bcrypt from 'bcryptjs';
 
 @Entity('users')
 export class User {
@@ -32,12 +33,11 @@ export class User {
     updated_at: Date;
 
     @BeforeInsert()
-    @BeforeUpdate()
     async hashPassword() {
-        //this.password = await argon2.hash(this.password, {type: argon2.argon2id});
+        this.password = await bcrypt.hash(this.password, 8);
     }
 
     async checkPassword(password: string) {
-        //return await argon2.verify(this.password, password);
+        return await bcrypt.compare(password, this.password);
     }
 }
