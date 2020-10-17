@@ -1,6 +1,6 @@
 import { IsNotEmpty, Length } from 'class-validator';
 import {
-    BeforeInsert, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique,
+    BeforeInsert, BeforeUpdate, Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, Unique,
     UpdateDateColumn
 } from 'typeorm';
 
@@ -33,6 +33,7 @@ export class User {
     updated_at: Date;
 
     @BeforeInsert()
+    @BeforeUpdate()
     async hashPassword() {
         this.password = await bcrypt.hash(this.password, 8);
     }
