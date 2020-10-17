@@ -87,18 +87,17 @@ class AuthController {
     };
 
     static changePassword = async (req: Request, res: Response) => {
-        const id = res.locals.jwtPayload.userId;
-        const { oldPassword, newPassword } = req.body;
+        const { username, oldPassword, newPassword } = req.body;
 
         // Verify if body exists
-        if (!(oldPassword && newPassword)) {
+        if (!(username && oldPassword && newPassword)) {
             res.status(400).send();
         }
 
         try {
             // Verify if user exists
             const userRepository = getRepository(User);
-            let user = await userRepository.findOneOrFail(id).catch(err => {
+            let user = await userRepository.findOneOrFail({ where: { username } }).catch(err => {
                 throw new Error(err);
             })
             if(!user){
