@@ -189,6 +189,7 @@ Execute as migrations:
 
 ```json
 {
+    "username": "username",
     "oldPassword": "password",
     "newPassword": "newPassword"
 }
@@ -201,7 +202,7 @@ Execute as migrations:
 
 ![get-user](README/user/GET-user.svg?raw=true&sanitize=true)
 
-![get-id-user](README/user/GET:ID-user.svg?raw=true&sanitize=true)
+![get-id-user](README/user/GET-ID-user.svg?raw=true&sanitize=true)
 
 ![patch-user](README/user/PATCH-user.svg?raw=true&sanitize=true)
 
@@ -220,7 +221,7 @@ Execute as migrations:
 
 ![get-employee](README/employee/GET-employee.svg?raw=true&sanitize=true)
 
-![get-id-employee](README/employee/GET:ID-employee.svg?raw=true&sanitize=true)
+![get-id-employee](README/employee/GET-ID-employee.svg?raw=true&sanitize=true)
 
 ![post-employee](README/employee/POST-employee.svg?raw=true&sanitize=true)
 
@@ -247,7 +248,7 @@ Execute as migrations:
 
 ### Motor
 
-![get-id-engine](README/engine/GET:ID-engine.svg?raw=true&sanitize=true)
+![get-id-engine](README/engine/GET-ID-engine.svg?raw=true&sanitize=true)
 
 ![post-engine](README/engine/POST-engine.svg?raw=true&sanitize=true)
 
@@ -266,7 +267,7 @@ Execute as migrations:
 
 ![get-key](README/key/GET-key.svg)
 
-![get-id-key](README/key/GET:ID-key.svg)
+![get-id-key](README/key/GET-ID-key.svg)
 
 ![post-key](README/key/POST-key.svg)
 
@@ -294,7 +295,7 @@ Execute as migrations:
 
 ![get-requisition](README/requisition/GET-requisition.svg)
 
-![get-id-requisition](README/requisition/GET:ID-requisition.svg)
+![get-id-requisition](README/requisition/GET-ID-requisition.svg)
 
 ![post-requisition](README/requisition/POST-requisition.svg)
 
