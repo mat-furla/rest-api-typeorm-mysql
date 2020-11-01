@@ -1,11 +1,4 @@
-<a>
-    <img src="README/logo.svg" alt="Chaveiro logo" title="chaveiro-smart" align="right" height="60" />
-</a>
-
-Chaveiro Smart Rest API
-======================
-
-O seguinte repositório contém uma API Rest para o projeto Chaveiro Smart.
+# Rest API
 
 A API foi desenvolvida com TypeScript e NodeJS, utilizando algumas tecnologias, incluindo:
 
@@ -14,7 +7,7 @@ A API foi desenvolvida com TypeScript e NodeJS, utilizando algumas tecnologias, 
  - express
  - helmet
  - JWT
- - argon2
+ - bcrypt
  - Docker
 
 
@@ -22,7 +15,7 @@ A API foi desenvolvida com TypeScript e NodeJS, utilizando algumas tecnologias, 
 
 ## Sumário
 
-* [Chaveiro Smart Rest API](#chaveiro-smart-rest-api)
+* [Rest API](#rest-api)
     * [Variáveis de Ambiente](#variáveis-de-ambiente)
     * [MySQL](#mysql)
     * [Instalação](#instalação)
