@@ -1,7 +1,7 @@
 {
-    "name": "chaveiro-smart-rest-api",
+    "name": "rest-api-typeorm-mysql",
     "version": "1.0.0",
-    "description": "Rest API/Projeto Chaveiro-Smart",
+    "description": "Rest API TypeORM MySQL",
     "devDependencies": {
         "@types/bcryptjs": "^2.4.2",
         "@types/cors": "^2.8.7",
